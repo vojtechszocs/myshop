@@ -1,0 +1,17 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+	<ui:style src="main.css" />
+
+	<g:HTMLPanel tag="nav" addStyleNames="{style.head_nav}">
+		<ul>
+			<li><g:InlineHyperlink ui:field="homeLink">Úvodná stránka</g:InlineHyperlink></li>
+			<li><g:InlineHyperlink ui:field="shopsLink">Obchody</g:InlineHyperlink></li>
+			<li><g:InlineHyperlink ui:field="productsLink">Produkty</g:InlineHyperlink></li>
+			<li><g:InlineHyperlink ui:field="galleryLink">Fotogaléria</g:InlineHyperlink></li>
+			<li><g:InlineHyperlink ui:field="accountLink">Môj účet</g:InlineHyperlink></li>
+		</ul>
+	</g:HTMLPanel>
+
+</ui:UiBinder>

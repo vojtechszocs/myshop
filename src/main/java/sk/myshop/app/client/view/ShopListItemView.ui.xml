@@ -1,0 +1,39 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+	<ui:style src="main.css" />
+	<ui:with type="sk.myshop.app.client.resource.MyShopResources" field="res" />
+
+	<g:HTMLPanel addStyleNames="{style.single_post}">
+		<article>
+			<div class="{style.floatLeft}">
+				<figure>
+					<g:Image ui:field="image" resource="{res.defaultShopImage}" />
+				</figure>
+				<footer>
+					<ul>
+						<g:HTMLPanel tag="li" ui:field="streetPanel" />
+						<g:HTMLPanel tag="li" ui:field="cityAndZipPanel" />
+						<g:HTMLPanel tag="li" ui:field="emailPanel">
+							<g:Anchor ui:field="emailLink" />
+						</g:HTMLPanel>
+						<g:HTMLPanel tag="li" ui:field="phonePanel" />
+					</ul>
+				</footer>
+			</div>
+
+			<div class="{style.art}">
+				<header>
+					<h2><g:InlineHyperlink ui:field="nameLink" /></h2>
+				</header>
+				<p><g:InlineLabel ui:field="descriptionLabel" /></p>
+				<span class="{style.more}">
+					<g:InlineHyperlink addStyleNames="{style.aqua}" ui:field="relatedProductsLink" />
+					<g:InlineHyperlink addStyleNames="{style.aqua}" ui:field="detailLink">Detail</g:InlineHyperlink>
+				</span>
+			</div>
+		</article>
+	</g:HTMLPanel>
+
+</ui:UiBinder>

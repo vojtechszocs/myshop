@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='myshop'>
+
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name='com.google.gwt.inject.Inject' />
+	<inherits name='sk.myshop.command.Command' />
+
+	<entry-point class='sk.myshop.app.client.MyShop' />
+
+	<script src='modernizr-1.1.min.js' />
+
+	<extend-configuration-property name="rpc.blacklist" value="-.*List" />
+	<extend-configuration-property name="rpc.blacklist" value="-.*Set" />
+	<extend-configuration-property name="rpc.blacklist" value="-.*Map" />
+	<extend-configuration-property name="rpc.blacklist" value="-.*Collection" />
+	<extend-configuration-property name="rpc.blacklist" value="-java.util.Stack" />
+	<extend-configuration-property name="rpc.blacklist" value="-java.util.Vector" />
+
+	<extend-configuration-property name="rpc.blacklist" value="+java.util.ArrayList" />
+	<extend-configuration-property name="rpc.blacklist" value="+java.util.HashSet" />
+	<extend-configuration-property name="rpc.blacklist" value="+java.util.HashMap" />
+	<extend-configuration-property name="rpc.blacklist" value="+java.util.LinkedHashMap" />
+
+</module>

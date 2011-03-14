@@ -1,0 +1,19 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'
+	xmlns:v='urn:import:sk.myshop.app.client.view'>
+
+	<ui:style src="main.css" />
+
+	<g:HTMLPanel tag="section">
+		<div class="{style.list_top}">
+			<g:Button addStyleNames="{style.aqua}" ui:field="resetPageButton">Na začiatok</g:Button>
+			<g:Button addStyleNames="{style.aqua}" ui:field="previousPageButton">Späť</g:Button>
+			<g:Button addStyleNames="{style.aqua}" ui:field="nextPageButton">Ďalej</g:Button>
+		</div>
+
+		<v:ContentHeader text="Obchody" />
+		<g:FlowPanel ui:field="shopListPanel" />
+	</g:HTMLPanel>
+
+</ui:UiBinder>

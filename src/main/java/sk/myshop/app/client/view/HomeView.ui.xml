@@ -1,0 +1,13 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'
+	xmlns:v='urn:import:sk.myshop.app.client.view'>
+
+	<ui:style src="main.css" />
+
+	<g:HTMLPanel tag="section" addStyleNames="{style.contact}">
+		<v:ContentHeader text="Vitajte" />
+		<p>Vitajte vo svojom účte obchodníka.</p>
+	</g:HTMLPanel>
+
+</ui:UiBinder>
