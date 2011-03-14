@@ -4,7 +4,7 @@
 <html lang="sk">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>VovoShop</title>
+	<title>MyShop</title>
 	<script type="text/javascript" language="javascript" src="myshop/myshop.nocache.js"></script>
 </head>
 <body>
