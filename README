@@ -1,0 +1,43 @@
+===============
+MyShop demo app
+===============
+
+
+What is it?
+-----------
+
+It's a single-page web app built with:
+
+  - Google Web Toolkit, an awesome toolkit to build modern web apps
+
+  - Google App Engine platform, using JDO (DataNucleus provider) and JCache (AppEngine Memcache)
+
+  - Guice and GIN for dependency injection and support of client-side architecture (Model-View-Presenter, event bus)
+
+  - Spring Framework for managing JDO datastore transactions
+
+
+How to run it?
+--------------
+
+You'll need Eclipse IDE with AJDT and Google Plugin for Eclipse. Make sure you're using GWT 2.2.0+ and App Engine 1.4.2+. Import the project into Eclipse, right click | Run As | Web Application.
+
+
+GWT client-server command pattern implementation using AspectJ
+--------------------------------------------------------------
+
+  1. When GWT's ServerSerializationStreamReader attempts to read the RPC payload, CommandAspect intercepts instantiations of all types to be deserialized by GWT RPC.
+
+  2. CommandAspect determines the substitute type for the given command type that was intercepted. Substitute types always extend their "base" command types, adding properties and logic applicable to the server-side environment. For example, each substitute type implements the "execute" method that encapsulates server-side command logic (called by CommandServiceImpl which orchestrates client-server command dispatching).
+
+  3. CommandAspect creates new instance of the substitute type. Instead of plain Constructor.newInstance(), CommandAspect asks Guice Injector to get such instance. This allows substitute types to use Guice just-in-time binding feature. In addition to that, substitute types can carry Spring's @Configurable annotation that makes them eligible for Spring-driven configuration.
+
+  4. CommandAspect returns the newly created instance of the substitute type to ServerSerializationStreamReader. In other words, CommandAspect tricked GWT RPC so that it thinks it has the original command type deserialized on the server. ServerSerializationStreamReader then sets all object fields passed from the client on the target instance.
+
+
+Miscellaneous
+-------------
+
+  Q: Why is there a ServerSerializationStreamReader class within the project that looks exactly as it was pulled from gwt-user.jar?
+  A: To avoid AJDT introspecting the whole gwt-user.jar! (see CommandAspect above)
+
